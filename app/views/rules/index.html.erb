@@ -3,7 +3,8 @@
 <ul>
   <% @rules.each do |rule| %>
     <li>
-      <%= rule.title %>
+      <%= link_to rule.title , rule %>
     </li>
   <% end %>
 </ul>
+

@@ -3,8 +3,9 @@ class RulesController < ApplicationController
     @rules = Rule.all
   end
 
-  # def show
-  # end
+  def show
+    @rule = Rule.find(params[:id])
+  end
 
   # def new
   # end
