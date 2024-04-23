@@ -1,2 +1,6 @@
 <h1><%= @rule.title %></h1>
 <p><%= @rule.body %></p>
+<ul>
+  <li><%= link_to "Edit", edit_rule_path(@rule) %></li>
+  <li><%= button_to "Delete" delete_rule(@rule),method: :delete, %>
+</ul>
