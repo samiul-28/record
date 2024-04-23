@@ -229,3 +229,27 @@ Migrating to CreateRules (20240423052732)
   [1m[36mTRANSACTION (29.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(349715343013334340)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRule Create (5.5ms)[0m  [1m[32mINSERT INTO "rules" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "THE REPUBLIC"], ["body", "the territories which immediately before the Proclamation of Independence on the 26th day of March, 1971 constituted East Pakistan"], ["created_at", "2024-04-23 05:35:25.951585"], ["updated_at", "2024-04-23 05:35:25.951585"]]
+  [1m[36mTRANSACTION (57.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRule Create (2.2ms)[0m  [1m[32mINSERT INTO "rules" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "THE REPUBLIC"], ["body", "the territories which immediately before the Proclamation of Independence on the 26th day of March, 1971 constituted East Pakistan"], ["created_at", "2024-04-23 05:36:20.992662"], ["updated_at", "2024-04-23 05:36:20.992662"]]
+  [1m[36mTRANSACTION (114.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRule Load (84.7ms)[0m  [1m[34mSELECT "rules".* FROM "rules" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(349715343013334340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(349715343013334340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-04-23 11:43:25 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rules/index.html.erb within layouts/application
+  [1m[36mRule Load (2.4ms)[0m  [1m[34mSELECT "rules".* FROM "rules"[0m
+  ↳ app/views/rules/index.html.erb:4
+  Rendered rules/index.html.erb within layouts/application (Duration: 130.3ms | Allocations: 12376)
+  Rendered layout layouts/application.html.erb (Duration: 364.4ms | Allocations: 36582)
+Completed 200 OK in 636ms (Views: 346.1ms | ActiveRecord: 33.8ms | Allocations: 46428)
+
+
